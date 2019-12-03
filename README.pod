@@ -6,6 +6,12 @@ Mojo::DB::Results::Role::Struct - Database query results as structs
 
 =head1 SYNOPSIS
 
+  use Mojo::SQLite;
+  my $sqlite = Mojo::SQLite->new(...);
+  my $results = $sqlite->db->query('SELECT * FROM "table" WHERE "foo" = ?', 42);
+  my $struct = $results->with_roles('Mojo::DB::Results::Role::Struct')->structs->first;
+  my $bar = $struct->bar; # dies unless column "bar" exists
+
   use Mojo::Pg;
   my $pg = Mojo::Pg->new(...)->with_roles('Mojo::DB::Role::ResultsRoles');
   push @{$pg->results_roles}, 'Mojo::DB::Results::Role::Struct';
