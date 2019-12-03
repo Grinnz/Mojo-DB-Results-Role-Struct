@@ -7,7 +7,7 @@ use 5.010001;
 use ExtUtils::MakeMaker;
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Return query results as structs",
+  "ABSTRACT" => "Database query results as structs",
   "AUTHOR" => "Dan Book <dbook\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0

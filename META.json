@@ -1,5 +1,5 @@
 {
-   "abstract" : "Return query results as structs",
+   "abstract" : "Database query results as structs",
    "author" : [
       "Dan Book <dbook@cpan.org>"
    ],

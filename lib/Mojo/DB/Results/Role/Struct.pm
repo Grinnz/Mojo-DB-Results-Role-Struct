@@ -29,7 +29,7 @@ sub _struct {
 
 =head1 NAME
 
-Mojo::DB::Results::Role::Struct - Return query results as structs
+Mojo::DB::Results::Role::Struct - Database query results as structs
 
 =head1 SYNOPSIS
 
