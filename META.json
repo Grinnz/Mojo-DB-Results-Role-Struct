@@ -53,7 +53,8 @@
          "requires" : {
             "File::Spec" : "0",
             "Module::Metadata" : "0",
-            "Test::More" : "0.88"
+            "Test::More" : "0.88",
+            "Test::Needs" : "0"
          }
       }
    },
