@@ -7,9 +7,8 @@ Mojo::DB::Results::Role::Struct - Return query results as structs
 =head1 SYNOPSIS
 
   use Mojo::Pg;
-  use Mojo::DB::ResultsRole 'apply_results_role';
-  my $pg = Mojo::Pg->new(...);
-  apply_results_role($pg, 'Mojo::DB::Results::Role::Struct');
+  my $pg = Mojo::Pg->new(...)->with_roles('Mojo::DB::Role::ResultsRoles');
+  push @{$pg->results_roles}, 'Mojo::DB::Results::Role::Struct';
   my $results = $pg->db->query('SELECT "foo", "bar" FROM "table"');
   foreach my $row ($results->structs->each) {
     my $foo = $row->foo;
@@ -30,9 +29,13 @@ trickier to access in this manner.
   # or
   my $val = $row->${\'foo.bar'};
 
+You can apply the role to a results object using L<Mojo::Base/"with_roles">,
+or apply it to all results objects created by a database manager using
+L<Mojo::DB::Role::ResultsRoles> as shown in the synopsis.
+
 =head1 METHODS
 
-L<Mojo::DB::Results::Role::StructResults> composes the following methods.
+L<Mojo::DB::Results::Role::Struct> composes the following methods.
 
 =head2 struct
 
@@ -66,6 +69,6 @@ This is free software, licensed under:
 
 =head1 SEE ALSO
 
-L<Mojo::Pg>, L<Mojo::SQLite>, L<Mojo::mysql>
+L<Mojo::DB::Role::ResultsRoles>, L<Mojo::Pg>, L<Mojo::SQLite>, L<Mojo::mysql>
 
 =cut
