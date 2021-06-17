@@ -1,5 +1,5 @@
 use Mojo::Base -strict;
-use Test::Needs {'Mojo::SQLite' => '1.000'}, 'Mojo::DB::Role::ResultsRoles';
+use Test::Needs {'Mojo::SQLite' => '1.004'}, 'Mojo::DB::Role::ResultsRoles';
 
 use Test::More;
 
